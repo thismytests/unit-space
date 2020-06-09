@@ -1,0 +1,12 @@
+<div>
+  <p *ngIf="!collectionSize">No direction links</p>
+  <ngb-pagination [collectionSize]="collectionSize"
+                  [page]="page"
+                  [pageSize]="pageSize"
+                  [maxSize]="10"
+                  [directionLinks]="false"
+                  (pageChange)="onPageChange($event)"
+  ></ngb-pagination>
+</div>
+
+

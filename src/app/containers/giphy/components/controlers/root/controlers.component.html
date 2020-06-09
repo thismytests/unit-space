@@ -1,0 +1,9 @@
+<form [formGroup]="controlsForm">
+  <div class="form-group">
+    <input formControlName={{SEARCH}}
+           placeholder="{{localeKeys.search.value}}"
+           (focus)="cleanSearch($event); "
+           type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    >
+  </div>
+</form>
