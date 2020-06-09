@@ -5,20 +5,23 @@
       <app-controlers [searchVal]="currentSearchUrlParam"
                       (data)="onChangeControlsComponent($event)"></app-controlers>
     </div>
-    <div class="row">
-      <!--paginator-->
-      <app-paginator [collectionSize]="collectionSize"
-                     [pageSize]="pageSize"
-                     [page]="currentPageUrlParam"
-                     (pageChange)="onChangePagination($event)"></app-paginator>
+    <ng-container *ngIf="foundItems?.length; else template">
+      <div class="row">
+        <!--paginator-->
+        <app-paginator [collectionSize]="collectionSize"
+                       [pageSize]="pageSize"
+                       [page]="currentPageUrlParam"
+                       (pageChange)="onChangePagination($event)"></app-paginator>
 
-    </div>
-    <div class="row">
-      <!--content-->
-      <app-content [items]="foundItems"></app-content>
-    </div>
+      </div>
+      <div class="row">
+        <!--content-->
+        <app-content [items]="foundItems"></app-content>
+      </div>
+    </ng-container>
 
 
   </div>
 </div>
 
+<ng-template #template>Please type another word ... </ng-template>

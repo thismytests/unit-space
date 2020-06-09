@@ -73,6 +73,7 @@ export class GiphyComponent implements OnInit, OnDestroy {
 
   onChangeControlsComponent($event) {
     this.currentSearchUrlParam = $event.search;
+    this.currentPageUrlParam = 1;
 
     this.giphyService.search(this.currentSearchUrlParam)
       .pipe(takeUntil(this.unsubscribe$))
